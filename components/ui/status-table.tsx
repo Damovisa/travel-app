@@ -43,7 +43,7 @@ const columns = [
   }),
   columnHelper.accessor(row => row.date, {
     id: 'date',
-    cell: info => <i>{info.getValue()}</i>,
+    cell: info => info.getValue(),
     header: () => <span>Date</span>
   }),
   columnHelper.accessor('points', {

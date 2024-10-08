@@ -18,7 +18,7 @@ export default function Home() {
           <img src="/avatar-15.png" alt="User Avatar" className="w-32 h-32 rounded-full" />
         </div>
         <div className="mt-6">
-          <h2 className="text-xl font-semibold">Points Activity</h2>
+          <h2 className="text-xl font-semibold">Recent Points Activity</h2>
           <StatusTable />
         </div>
       </div>
