@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import ReactDOM from 'react-dom/client'
+import { PointsActivityData } from '@/lib/PointsActivityData'
 
 import {
   createColumnHelper,
@@ -10,29 +11,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
-type PointsActivity = {
-  description: string
-  date: string
-  points: number
-}
-
-const defaultData: PointsActivity[] = [
-  {
-    description: 'SFO-NYC',
-    date: '2024-09-15',
-    points: 500
-  },
-  {
-    description: 'Hotel Stay',
-    date: '2024-09-10',
-    points: 300
-  },
-  {
-    description: 'Car Rental',
-    date: '2024-09-05',
-    points: 400
-  },
-]
+var activityData = PointsActivityData;
 
 const columnHelper = createColumnHelper<PointsActivity>()
 
@@ -53,7 +32,7 @@ const columns = [
 ]
 
 const StatusTable: React.FC = () => {
-  const [data, _setData] = React.useState(() => [...defaultData])
+  const [data, _setData] = React.useState(() => [...activityData])
   const rerender = React.useReducer(() => ({}), {})[1]
 
   const table = useReactTable({
