@@ -1,4 +1,3 @@
-import { describe } from "node:test";
 import PointsActivity from "../PointsActivity";
 
 const PointsActivityData: PointsActivity[] = [

@@ -1,4 +1,4 @@
-import TravelLineChart from "@/app/travel-line-chart";
+import TravelLineChart from "@/app/charts/travel-line-chart";
 
 export default function Home() {
   return (
