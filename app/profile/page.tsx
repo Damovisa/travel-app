@@ -1,5 +1,6 @@
 import StatusTable from "@/components/ui/status-table";
 import NextStatusChart from "@/app/charts/next-status-chart";
+import { PointsActivityData } from "@/lib/PointsActivityData";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         </div>
         <div className="mt-6">
           <h2 className="text-xl font-semibold">Recent Points Activity</h2>
-          <StatusTable />
+          <StatusTable activityData={PointsActivityData} />
         </div>
       </div>
     </div>

@@ -38,4 +38,57 @@ const PointsActivityData: PointsActivity[] = [
     }
 ];
 
-export { PointsActivityData };
+const MonthlyPointsActivityData: PointsActivity[] = [
+    {
+        description: "Points activity",
+        date: 'Oct 2024',
+        points: 2800
+    },
+    {
+        description: "Points activity",
+        date: 'Sep 2024',
+        points: 2300
+    },
+    {
+        description: "Points activity",
+        date: 'Aug 2024',
+        points: 2300
+    },
+    {
+        description: "Points activity",
+        date: 'Jul 2024',
+        points: 2300
+    },
+    {
+        description: "Points activity",
+        date: 'Jun 2024',
+        points: 1700
+    },
+    {
+        description: "Points activity",
+        date: 'May 2024',
+        points: 1400
+    },
+    {
+        description: "Points activity",
+        date: 'Apr 2024',
+        points: 1400
+    },
+    {
+        description: "Points activity",
+        date: 'Mar 2024',
+        points: 3000
+    },
+    {
+        description: "Points activity",
+        date: 'Feb 2024',
+        points: 2200
+    },
+    {
+        description: "Points activity",
+        date: 'Jan 2024',
+        points: 2000
+    }
+];
+
+export { PointsActivityData, MonthlyPointsActivityData };
