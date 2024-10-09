@@ -1,0 +1,118 @@
+import CityGuide from "../CityGuide";
+
+const CityGuideData: CityGuide[] = [
+  {
+    id: 1,
+    city: "New York",
+    country: "USA",
+    latlong: [40.7128, -74.0060],
+    description: "New York City, often referred to as the Big Apple, is a bustling metropolis known for its iconic skyline and vibrant cultural scene. From the towering skyscrapers of Manhattan to the serene expanses of Central Park, New York offers a diverse array of experiences for residents and visitors alike.\n\nThe city is a melting pot of cultures, boasting world-class museums, theaters, and restaurants. Landmarks such as the Statue of Liberty and Times Square make it a global symbol of opportunity and dynamism.",
+    highlights: ["Central Park", "Statue of Liberty", "Empire State Building"],
+  },
+  {
+    id: 2,
+    city: "London",
+    country: "UK",
+    latlong: [51.5074, -0.1278],
+    description: "London is a historic and modern city that seamlessly blends rich heritage with contemporary vibrancy. As the capital of the United Kingdom, it is home to renowned landmarks like the Tower of London and Buckingham Palace, attracting millions of tourists each year.\n\nThe city boasts a thriving arts scene, diverse culinary offerings, and extensive green spaces. London's efficient public transport system and cosmopolitan atmosphere make it a favorite destination for both business and leisure travelers.",
+    highlights: ["Buckingham Palace", "Big Ben", "The Shard"],
+  },
+  {
+    id: 3,
+    city: "Paris",
+    country: "France",
+    latlong: [48.8566, 2.3522],
+    description: "Paris, known as the City of Light, is celebrated for its romantic ambiance, stunning architecture, and rich cultural heritage. The Eiffel Tower, a global icon, overlooks the elegant boulevards and historic neighborhoods that define the city.\n\nParis is also a hub for art, fashion, and gastronomy, featuring world-famous museums like the Louvre and a plethora of chic boutiques and gourmet restaurants. Its charming cafes and scenic Seine River cruises add to the city's enduring allure.",
+    highlights: ["Eiffel Tower", "Louvre Museum", "Notre-Dame Cathedral"],
+  },
+  {
+    id: 4,
+    city: "Tokyo",
+    country: "Japan",
+    latlong: [35.6895, 139.6917],
+    description: "Tokyo is a vibrant metropolis that perfectly balances cutting-edge technology with deep-rooted traditions. As Japan's capital, it boasts towering skyscrapers, bustling street markets, and serene temples, offering a unique juxtaposition of the old and the new.\n\nThe city is renowned for its culinary excellence, innovative fashion, and dynamic pop culture. From the historic Asakusa district to the futuristic district of Odaiba, Tokyo provides an endless array of experiences for visitors and locals alike.",
+    highlights: ["Tokyo Tower", "Shibuya Crossing", "Senso-ji Temple"],
+  },
+  {
+    id: 5,
+    city: "Rome",
+    country: "Italy",
+    latlong: [41.9028, 12.4964],
+    description: "Rome, the Eternal City, is a treasure trove of history, art, and architecture. As the capital of Italy, it is home to ancient ruins such as the Colosseum and the Roman Forum, which stand as testaments to its storied past.\n\nBeyond its historical significance, Rome offers vibrant street life, exquisite cuisine, and a lively cultural scene. The Vatican City, nestled within Rome, houses masterpieces like Michelangelo's Sistine Chapel, making the city a pilgrimage site for art lovers worldwide.",
+    highlights: ["Colosseum", "Trevi Fountain", "Vatican City"],
+  },
+  {
+    id: 6,
+    city: "Sydney",
+    country: "Australia",
+    latlong: [-33.8688, 151.2093],
+    description: "Sydney is Australia's largest city, famed for its stunning harbor, iconic Opera House, and picturesque beaches. The city's waterfront is a hub of activity, offering everything from sailing and surfing to world-class dining and entertainment.\n\nSydney's diverse neighborhoods provide a range of cultural experiences, from the historic Rocks district to the trendy areas of Darlinghurst and Surry Hills. Its pleasant climate and outdoor lifestyle make it a favorite destination for both residents and tourists.",
+    highlights: ["Sydney Opera House", "Bondi Beach", "Royal Botanic Garden"],
+  },
+  {
+    id: 7,
+    city: "Cairo",
+    country: "Egypt",
+    latlong: [30.0444, 31.2357],
+    description: "Cairo, the capital of Egypt, is a sprawling metropolis that serves as a gateway to the country's ancient wonders. Dominated by the majestic Pyramids of Giza and the enigmatic Sphinx, Cairo is a city where history and modernity coexist seamlessly.\n\nThe bustling bazaars, such as Khan el-Khalili, offer a sensory overload of sights, sounds, and smells, while the Nile River provides a tranquil contrast to the city's vibrant energy. Cairo's rich cultural heritage is reflected in its museums, mosques, and diverse culinary scene.",
+    highlights: ["Pyramids of Giza", "Khan el-Khalili", "Egyptian Museum"],
+  },
+  {
+    id: 8,
+    city: "Rio de Janeiro",
+    country: "Brazil",
+    latlong: [-22.9068, -43.1729],
+    description: "Rio de Janeiro is renowned for its breathtaking landscapes, from the iconic Christ the Redeemer statue atop Corcovado Mountain to the stunning beaches of Copacabana and Ipanema. The city's natural beauty is complemented by its vibrant cultural life and festive spirit.\n\nRio is famous for its annual Carnival, a grand celebration of music, dance, and colorful parades that attracts visitors from around the world. The city's diverse neighborhoods offer a mix of colonial architecture, modern developments, and lush green spaces, making it a dynamic and captivating destination.",
+    highlights: ["Christ the Redeemer", "Sugarloaf Mountain", "Copacabana Beach"],
+  },
+  {
+    id: 9,
+    city: "Istanbul",
+    country: "Turkey",
+    latlong: [41.0082, 28.9784],
+    description: "Istanbul is a city that straddles two continents, Europe and Asia, offering a unique blend of cultures, histories, and traditions. Its skyline is dotted with minarets, domes, and modern buildings, reflecting its rich and diverse heritage.\n\nThe city's historic sites, such as the Hagia Sophia, Blue Mosque, and Topkapi Palace, showcase its significance as a crossroads of civilizations. Istanbul's bustling bazaars, vibrant neighborhoods, and delectable cuisine provide endless exploration opportunities for visitors.",
+    highlights: ["Blue Mosque", "Hagia Sophia", "Topkapi Palace"],
+  },
+  {
+    id: 10,
+    city: "Mexico City",
+    country: "Mexico",
+    latlong: [19.4326, -99.1332],
+    description: "Mexico City is a sprawling urban center that combines ancient history with contemporary flair. As the capital of Mexico, it boasts a wealth of cultural landmarks, including the historic Zocalo, the grand Palacio de Bellas Artes, and numerous museums housing world-class art collections.\n\nThe city's dynamic neighborhoods offer a mix of colonial architecture, modern skyscrapers, and vibrant street art. Mexico City's culinary scene is equally diverse, featuring everything from traditional Mexican cuisine to innovative gourmet dining experiences.",
+    highlights: ["Zocalo", "Chapultepec Park", "Frida Kahlo Museum"],
+  },
+  {
+    id: 11,
+    city: "Cape Town",
+    country: "South Africa",
+    latlong: [-33.9249, 18.4241],
+    description: "Cape Town is a coastal gem nestled between the imposing Table Mountain and the sparkling Atlantic Ocean. Known for its stunning natural beauty, the city offers panoramic views, pristine beaches, and lush gardens.\n\nCape Town's rich cultural tapestry is reflected in its diverse neighborhoods, historic landmarks, and vibrant arts scene. From the colorful houses of Bo-Kaap to the scenic drives along Chapman's Peak, the city provides a perfect blend of adventure, relaxation, and cultural exploration.",
+    highlights: ["Table Mountain", "Robben Island", "Kirstenbosch National Botanical Garden"],
+  },
+  {
+    id: 12,
+    city: "Marrakech",
+    country: "Morocco",
+    latlong: [31.6295, -7.9811],
+    description: "Marrakech is a city of contrasts, where ancient traditions meet modern luxury. Known for its bustling souks, ornate palaces, and lush gardens, Marrakech offers a sensory-rich experience for all who visit.\n\nThe city's medina is a UNESCO World Heritage site, featuring narrow alleyways, vibrant markets, and stunning architecture. Marrakech is also home to exquisite riads, traditional Moroccan houses with interior gardens, and a thriving culinary scene that showcases the flavors of North Africa.",
+    highlights: ["Jemaa el-Fnaa", "Bahia Palace", "Koutoubia Mosque"],
+  },
+  {
+    id: 13,
+    city: "Moscow",
+    country: "Russia",
+    latlong: [55.7558, 37.6176],
+    description: "Moscow, the capital of Russia, is a city of grand architecture, rich history, and vibrant culture. The city's skyline is dominated by the colorful domes of Saint Basil's Cathedral and the imposing structures of the Kremlin.\n\nMoscow offers a blend of historic sites and modern developments, including world-class museums, theaters, and shopping districts. The city's extensive parklands and the beautiful Moskva River provide ample opportunities for relaxation and recreation.",
+    highlights: ["Red Square", "Kremlin", "St. Basil's Cathedral"],
+  },
+  {
+    id: 14,
+    city: "Dubai",
+    country: "United Arab Emirates",
+    latlong: [25.276987, 55.296249],
+    description: "Dubai is a futuristic city known for its towering skyscrapers, luxury shopping, and vibrant nightlife. The iconic Burj Khalifa, the world's tallest building, stands as a testament to the city's rapid development and ambition.\n\nBeyond its modern attractions, Dubai offers a blend of traditional and contemporary experiences, from the historic Al Fahidi District to the expansive Dubai Mall. The city's expansive beaches, desert landscapes, and innovative architecture make it a premier destination for travelers seeking both adventure and relaxation.",
+    highlights: ["Burj Khalifa", "Palm Jumeirah", "Dubai Mall"]
+  }
+];
+
+export default CityGuideData;

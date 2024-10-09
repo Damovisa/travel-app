@@ -10,6 +10,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .highlight {
+    background-color: hsl(53 51% 79%);
+  }
 }
 
 @layer base {

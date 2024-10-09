@@ -18,6 +18,11 @@ const TitleBar: React.FC = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link href="/travel-guide" className="hover:bg-primary-light p-2 rounded">
+                            🌍 Travel Guide
+                        </Link>
+                    </li>
+                    <li>
                         <Link href="/profile" className="hover:bg-primary-light p-2 rounded">
                             👤 My Profile
                         </Link>
