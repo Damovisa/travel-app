@@ -23,6 +23,11 @@ const TitleBar: React.FC = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link href="/admin/travelguide" className="hover:bg-primary-light p-2 rounded">
+                            ⚙️
+                        </Link>
+                    </li>
+                    <li>
                         <Link href="/profile" className="hover:bg-primary-light p-2 rounded">
                             👤 My Profile
                         </Link>
