@@ -8,8 +8,7 @@ export default function Home() {
       <div className="bg-card p-6 rounded-lg shadow-lg w-full max-w-4xl mt-8">
         <FlightBookingForm />
       </div>
-    </div>
-    <div className="bg-background text-foreground flex items-center justify-center">
+    </div><div className="bg-background text-foreground flex items-center justify-center">
         <div className="bg-card p-6 rounded-lg shadow-lg w-full max-w-4xl mt-8">
           <TravelLineChart tripData={TripData} />
         </div>
