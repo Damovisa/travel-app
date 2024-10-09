@@ -31,5 +31,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Screenshots
 
+### Booking Page
+![Booking Page](readme-images/booking-page.png)
 
-![Profile page](profile-screenshot.png)
+## Travel Guide Page
+![Travel Guide Page](readme-images/travel-guide-page.png)
+
+## Travel Guide Admin Page
+![alt text](readme-images/travel-guide-admin-page.png)
+
+### Profile Page
+![Profile page](readme-images/profile-page.png)
