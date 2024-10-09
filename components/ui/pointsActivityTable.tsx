@@ -29,7 +29,7 @@ const columns = [
   })
 ]
 
-const StatusTable: React.FC<{ activityData: PointsActivityData[] }> = ({ activityData }) => {
+const PointsActivityTable: React.FC<{ activityData: PointsActivityData[] }> = ({ activityData }) => {
   const [data, _setData] = React.useState(() => [...activityData])
   const rerender = React.useReducer(() => ({}), {})[1]
 
@@ -77,4 +77,4 @@ const StatusTable: React.FC<{ activityData: PointsActivityData[] }> = ({ activit
   )
 }
 
-export default StatusTable
+export default PointsActivityTable

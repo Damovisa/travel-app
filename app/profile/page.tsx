@@ -1,4 +1,4 @@
-import StatusTable from "@/components/ui/status-table";
+import PointsActivityTable from "@/components/ui/pointsActivityTable";
 import NextStatusChart from "@/app/charts/next-status-chart";
 import { PointsActivityData } from "@/lib/PointsActivityData";
 
@@ -19,7 +19,7 @@ export default function Home() {
         </div>
         <div className="mt-6">
           <h2 className="text-xl font-semibold">Recent Points Activity</h2>
-          <StatusTable activityData={PointsActivityData} />
+          <PointsActivityTable activityData={PointsActivityData} />
         </div>
       </div>
     </div>
