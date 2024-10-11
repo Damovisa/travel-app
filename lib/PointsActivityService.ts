@@ -2,7 +2,7 @@ import { PointsActivityData, StartingPoints } from "./data/PointsActivityData";
 import { PointsActivityDisplay, PointsActivityDisplayData, PointsActivityRawData } from "./types/PointsActivity";
 
 class PointsActivityService {
-  getPointsActivity(): PointsActivityDisplay {
+  getPointsActivity(): PointsActivityDisplayData[] {
     // map the PointsActivity to PointsActivityDisplayData
     const displayData: PointsActivityDisplayData[] = PointsActivityData.map((activity: PointsActivityRawData) => {
       return {
@@ -11,14 +11,18 @@ class PointsActivityService {
         points: activity.points
       }
     });
-    const PointsActivityDisplayData: PointsActivityDisplay = {
-      startingPoints: StartingPoints,
-      PointsActivity: displayData
-    };
-    return PointsActivityDisplayData;
+
+    // add one item to the bottom of the array that represents the starting points
+    displayData.push({
+      description: 'Starting Points',
+      date: '',
+      points: StartingPoints
+    });
+    
+    return displayData;
   }
 
-  getMonthlyPointsActivity(): PointsActivityDisplay {
+  getMonthlyPointsActivity(): PointsActivityDisplayData[] {
     const monthlyPointsMap: { [key: string]: number } = {};
 
     PointsActivityData.forEach((activity: PointsActivityRawData) => {
@@ -46,10 +50,7 @@ class PointsActivityService {
       };
     });
 
-    return {
-      startingPoints: StartingPoints,
-      PointsActivity: displayData
-    };
+    return displayData;
   }
 
   getCurrentPoints(): number {
