@@ -1,6 +1,6 @@
 import TravelLineChart from "@/app/charts/travel-line-chart";
 import FlightBookingForm from "@/components/ui/flightBookingForm";
-import TripData from "@/lib/TripData";
+import TripData from "@/lib/data/TripData";
 
 export default function Home() {
   return (

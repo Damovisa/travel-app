@@ -1,7 +1,23 @@
-interface PointsActivity {
+interface PointsActivityRawData {
+    description: string;
+    date: Date;
+    points: number;
+}
+
+interface PointsActivityDisplayData {
     description: string;
     date: string;
     points: number;
 }
 
-export default PointsActivity;
+interface PointsActivity {
+    startingPoints: number;
+    PointsActivity: PointsActivityRawData[];
+}
+
+interface PointsActivityDisplay {
+    startingPoints: number;
+    PointsActivity: PointsActivityDisplayData[];
+}
+
+export type { PointsActivity, PointsActivityDisplay, PointsActivityDisplayData, PointsActivityRawData };

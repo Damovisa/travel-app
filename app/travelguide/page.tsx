@@ -2,7 +2,7 @@
 
 import React, { useState, Suspense } from 'react';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
-import CityGuideData from "@/lib/CityGuideData";
+import CityGuideData from "@/lib/data/CityGuideData";
 
 export default function TravelGuidePage() {
     const [selectedCity, setSelectedCity] = useState<number | null>(null);

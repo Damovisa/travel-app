@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import ReactDOM from 'react-dom/client'
-import { PointsActivityData } from '@/lib/PointsActivityData'
+import { PointsActivityData } from '@/lib/data/PointsActivityData'
 
 import {
   createColumnHelper,
