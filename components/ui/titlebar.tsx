@@ -1,40 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
+import { Link1Icon } from '@radix-ui/react-icons';
 
 const TitleBar: React.FC = () => {
     return (
-        <header className="bg-primary text-primary-foreground p-4 flex justify-between items-center">
-            <h1 className="text-xl font-bold"><a href="/">Mona Airways</a></h1>
-            <nav>
-                <ul className="flex space-x-4">
-                    <li>
-                        <Link href="/book" className="hover:bg-primary-light p-2 rounded">
-                            📖 Book
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/checkin" className="hover:bg-primary-light p-2 rounded">
-                            🛫 Check In
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/travelguide" className="hover:bg-primary-light p-2 rounded">
-                            🌍 Travel Guide
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/admin/travelguide" className="hover:bg-primary-light p-2 rounded">
-                            ⚙️
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/profile" className="hover:bg-primary-light p-2 rounded">
-                            👤 My Profile
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <header>
+        <div className="logo">
+        <Link href="/"><img src="/img/logo.svg" alt="Copilot Airways" /></Link>
+        </div>
+        <nav>
+            <ul>
+                <li className="selected"><Link href="/book">Book Flight</Link></li>
+                <li><Link href="#">Check-In</Link></li>
+                <li><Link href="/travelguide">Travel Guide</Link></li>
+                <li className="avatar"><Link href="/profile"><img src="img/avatar.jpeg" width="32px" height="32px" /></Link></li>
+            </ul>
+        </nav>
+      </header>
     );
 };
 
