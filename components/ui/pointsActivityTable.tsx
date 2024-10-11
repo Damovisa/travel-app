@@ -24,7 +24,7 @@ const columns = [
   }),
   columnHelper.accessor('points', {
     header: () => 'Points',
-    cell: info => info.renderValue()
+    cell: info => <div style={{ textAlign: 'right' }}>{info.renderValue()?.toLocaleString()}</div>
   })
 ]
 
