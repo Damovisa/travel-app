@@ -1,13 +1,15 @@
 import PointsActivityTable from "@/components/ui/pointsActivityTable";
 import NextStatusChart from "@/components/ui/charts/nextStatusChart";
+import MonthlyPointsAreaChart from "@/components/ui/charts/MonthlyPointsAreaChart";
 import PointsActivityService from "@/lib/PointsActivityService";
+import { Suspense } from 'react';
 
 export default function Home() {
 
   const service = new PointsActivityService();
   const activityData = service.getPointsActivity();
   const currentPoints = service.getCurrentPoints();
-
+  const monthlyPointsData = service.getMonthlyPointsActivity();
 
   return (
     <div className="bg-background text-foreground flex items-center justify-center">
@@ -26,6 +28,9 @@ export default function Home() {
         <div className="mt-6">
           <h2 className="text-xl font-semibold">Recent Points Activity</h2>
           <PointsActivityTable activityData={activityData} />
+        </div>
+        <div className="mt-6">
+          <MonthlyPointsAreaChart data={monthlyPointsData} />
         </div>
       </div>
     </div>
