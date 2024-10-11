@@ -1,5 +1,5 @@
 import PointsActivityTable from "@/components/ui/pointsActivityTable";
-import NextStatusChart from "@/app/charts/next-status-chart";
+import NextStatusChart from "@/components/ui/charts/nextStatusChart";
 import PointsActivityService from "@/lib/PointsActivityService";
 
 export default function Home() {

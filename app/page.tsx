@@ -1,4 +1,4 @@
-import TravelLineChart from "@/app/charts/travel-line-chart";
+import TravelLineChart from "@/components/ui/charts/tripsLineChart";
 import FlightBookingForm from "@/components/ui/flightBookingForm";
 import TripData from "@/lib/data/TripData";
 
