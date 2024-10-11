@@ -3,10 +3,11 @@
 import * as React from 'react'
 import { Suspense, useState, useEffect } from 'react'
 
-const FlightBookingForm: React.FC = () => {
+const FlightBookingForm: React.FC<{ startingLocation?: string }> = ({ startingLocation }) => {
   const [departureDate, setDepartureDate] = useState<string>('');
   const [returnDate, setReturnDate] = useState<string>('');
   const [isOneWay, setIsOneWay] = useState<boolean>(false);
+  const [fromLocation, setFromLocation] = useState<string>(startingLocation || 'NYC');
 
   useEffect(() => {
     const today = new Date();
@@ -19,13 +20,14 @@ const FlightBookingForm: React.FC = () => {
     setReturnDate(returnD.toISOString().split('T')[0]);
   }, []);
 
-    return (
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
       <div className="min-w-max mx-auto p-6 border border-gray-300 rounded-lg shadow-lg bg-white">
         <form>
           <div className="flex mb-4">
             <div className="w-2/5 pr-2">
               <label htmlFor="from" className="block text-sm font-bold mb-2">From:</label>
-              <select id="from" name="from" className="w-full p-2 border border-gray-300 rounded text-lg">
+              <select id="from" name="from" className="w-full p-2 border border-gray-300 rounded text-lg" value={fromLocation} onChange={(e) => setFromLocation(e.target.value)}>
                 <option value="NYC">New York City (NYC)</option>
                 <option value="LAX">Los Angeles (LAX)</option>
                 <option value="CHI">Chicago (CHI)</option>
@@ -97,6 +99,7 @@ const FlightBookingForm: React.FC = () => {
           <button type="submit" className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">Search</button>
         </form>
       </div>
+    </Suspense>
   )
 }
 
