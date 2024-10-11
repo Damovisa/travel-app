@@ -1,8 +1,7 @@
 "use client"
 
 import * as React from 'react'
-import ReactDOM from 'react-dom/client'
-import { PointsActivityData } from '@/lib/data/PointsActivityData'
+import { PointsActivityDisplayData } from '@/lib/types/PointsActivity'
 
 import {
   createColumnHelper,
@@ -11,7 +10,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
-const columnHelper = createColumnHelper<PointsActivity>()
+const columnHelper = createColumnHelper<PointsActivityDisplayData>()
 
 const columns = [
   columnHelper.accessor('description', {
@@ -29,7 +28,7 @@ const columns = [
   })
 ]
 
-const PointsActivityTable: React.FC<{ activityData: PointsActivityData[] }> = ({ activityData }) => {
+const PointsActivityTable: React.FC<{ activityData: PointsActivityDisplayData[] }> = ({ activityData }) => {
   const [data, _setData] = React.useState(() => [...activityData])
   const rerender = React.useReducer(() => ({}), {})[1]
 
