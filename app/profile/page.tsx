@@ -8,6 +8,7 @@ export default function Home() {
   const activityData = service.getPointsActivity();
   const currentPoints = service.getCurrentPoints();
 
+
   return (
     <div className="bg-background text-foreground flex items-center justify-center">
       <div className="bg-card p-6 rounded-lg shadow-lg w-full max-w-4xl mt-8">
@@ -17,14 +18,14 @@ export default function Home() {
             <img src="/avatar-15.png" alt="User Avatar" className="w-48 h-48 rounded-full" />
             <p className="text-lg"><strong>Current Status:</strong> Gold</p>
             <p className="text-lg"><strong>Status Points:</strong> {currentPoints.toLocaleString()}</p>
-            </div>
-            <div>
+          </div>
+          <div>
             <NextStatusChart />
           </div>
         </div>
         <div className="mt-6">
           <h2 className="text-xl font-semibold">Recent Points Activity</h2>
-          <PointsActivityTable activityData={activityData.PointsActivity} />
+          <PointsActivityTable activityData={activityData} />
         </div>
       </div>
     </div>
