@@ -1,5 +1,3 @@
-// import type { Metadata } from "next";
-// import localFont from "next/font/local";
 import "./globals.css";
 import TitleBar from "@/components/ui/titlebar";
 import Footer from "@/components/ui/footer";

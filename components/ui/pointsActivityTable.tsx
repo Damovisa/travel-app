@@ -41,6 +41,7 @@ const PointsActivityTable: React.FC<{ activityData: PointsActivityDisplayData[] 
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
       <div className="p-2">
+      <h2>Recent Points Activity</h2>
         <table>
           <thead>
             {table.getHeaderGroups().map(headerGroup => (

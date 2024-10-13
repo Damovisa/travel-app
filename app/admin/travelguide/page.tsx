@@ -3,10 +3,21 @@ import TravelGuideForm from "@/components/ui/travelGuideForm";
 
 export default function Home() {
   return (
-    <div className="bg-background text-foreground flex items-center justify-center">
-      <div className="bg-card p-6 rounded-lg shadow-lg w-full max-w-4xl mt-8">
-        <TravelGuideForm />
+      <div className="page-container admin">
+      <div className="sidebar-menu">
+        <ul>
+          <li><a href="#">New Airports</a></li>
+          <li><a href="#">Partners</a></li>
+          <li className="selected"><a href="#">Add travel Guide</a></li>
+          <li><a href="#">Configuration</a></li>
+          <li><a href="#">Manage Corporate</a></li>
+        </ul>     
+      </div>
+
+      <div className="content">
+          <TravelGuideForm />
       </div>
     </div>
+
   )
 }

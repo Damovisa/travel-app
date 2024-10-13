@@ -57,11 +57,8 @@ export default function NextStatusChart() {
   }, [])
 
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
-        <CardTitle>Points until Platinum</CardTitle>
-      </CardHeader>
-      <CardContent className="flex-1 pb-0">
+   <>
+      <CardContent>
         <ChartContainer
           config={chartConfig}
           className="mx-auto aspect-square max-h-[350px]"
@@ -111,11 +108,10 @@ export default function NextStatusChart() {
           </PieChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm">
-        <div className="flex items-center gap-2 font-medium leading-none">
-          1,700 points until Platinum <TrendingUp className="h-4 w-4" />
+        <div>
+          1,700 points until Platinum
         </div>
-      </CardFooter>
-    </Card>
+ 
+      </>
   )
 }

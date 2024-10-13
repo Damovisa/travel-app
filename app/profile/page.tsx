@@ -12,7 +12,7 @@ export default function Home() {
 
 
   return (
-    <div className="container profile">
+    <div className="page-container profile">
       <div className="sidebar-menu">
           <div>
             <img src="/img/avatar.jpeg" alt="User Avatar" className="user-avatar" />
@@ -29,25 +29,15 @@ export default function Home() {
 
 
     <div className="content">
-    <h2>Recent Points Activity</h2>
-
       <div className="profile-card">
           <PointsActivityTable activityData={activityData} />
       </div>
 
-      <h2>Random Chart</h2>
-
 <div className="profile-card">
-    <div className="bg-card p-6 rounded-lg shadow-lg w-full max-w-4xl mt-8">
       <TravelLineChart tripData={TripData} />
-    </div>      
 </div>
 
     </div>
-
-   
-
-
   </div>
   );
 }
