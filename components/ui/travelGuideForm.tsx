@@ -8,6 +8,7 @@ const TravelGuideForm: React.FC = () => {
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
   const [error, setError] = useState<string>('');
+  const [showAddButtons, setShowAddButtons] = useState<boolean[]>([true]);
 
   const handleHighlightChange = (index: number, value: string) => {
     const newHighlights = [...highlights];
@@ -15,9 +16,13 @@ const TravelGuideForm: React.FC = () => {
     setHighlights(newHighlights);
   };
 
-  const addHighlight = () => {
+  const addHighlight = (index: number) => {
     setHighlights([...highlights, '']);
-  };
+    const newShowAddButtons = [...showAddButtons];
+    newShowAddButtons[index] = false; // Hide the button that was clicked
+    newShowAddButtons.push(true); // Add a new button for the new highlight
+    setShowAddButtons(newShowAddButtons);
+    };
 
   const fetchCoordinates = async (cityName: string, countryName: string) => {
     try {
@@ -59,68 +64,72 @@ const TravelGuideForm: React.FC = () => {
     console.log({ city, country, description, highlights, latitude, longitude });
   };
 
+
   return (
-    <div className="min-w-max mx-auto p-6 border border-gray-300 rounded-lg shadow-lg bg-white">
+    <div className="admin-card">   
+      <h2>Add a New Travel Guide</h2>
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">
-            City:
+        <div>
+          <label htmlFor='city'> City: </label>
             <input
+              id="city"
+              placeholder="Enter city name"
               type="text"
               value={city}
               onChange={(e) => setCity(e.target.value)}
               onBlur={handleBlur}
-              className="w-full p-2 border border-gray-300 rounded text-lg"
             />
-          </label>
+          
         </div>
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">
-            Country:
+        <div>
+          <label htmlFor='country'> Country: </label>
             <input
+              id="country"
+              placeholder="Enter country name"
               type="text"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
               onBlur={handleBlur}
-              className="w-full p-2 border border-gray-300 rounded text-lg"
             />
-          </label>
+          
         </div>
-        <div className='mb-4'>
+        <div>
         {latitude && <div><i><strong>Location:</strong> {latitude},{longitude}</i></div>}
         {error && <div className="text-red-500 mb-4">{error}</div>}
         </div>
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">
-            Description:
+        <div>
+          <label htmlFor='description'> Description: </label>
             <textarea
+              id="description"
+              placeholder="Enter Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded text-lg"
             />
-          </label>
+          
         </div>
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">Highlights:</label>
+        <div>
+          <label>Highlights:</label>
           {highlights.map((highlight, index) => (
-            <div key={index} className="mb-2">
+            <div key={index} className="highlight-container">
               <input
+                placeholder="Add Highlight"
                 type="text"
                 value={highlight}
                 onChange={(e) => handleHighlightChange(index, e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded text-lg"
               />
+              {showAddButtons[index] && (
+                <button
+                  type="button"
+                  onClick={() => addHighlight(index)}
+                  className="highlight-button"
+                >
+                  +
+                </button>
+              )}
             </div>
           ))}
-          <button
-            type="button"
-            onClick={addHighlight}
-            className="w-full p-2 bg-gray-500 text-white rounded hover:bg-blue-600"
-          >
-            Add Highlight
-          </button>
         </div>
-        <button type="submit" className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        <button type="submit">
           Submit
         </button>
       </form>

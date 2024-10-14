@@ -23,7 +23,7 @@ const columns = [
     header: () => <span>Date</span>
   }),
   columnHelper.accessor('points', {
-    header: () => 'Points',
+    header: () => <div style={{ textAlign: 'right' }}>Points</div>,
     cell: info => <div style={{ textAlign: 'right' }}>{info.renderValue()?.toLocaleString()}</div>
   })
 ]
@@ -41,12 +41,13 @@ const PointsActivityTable: React.FC<{ activityData: PointsActivityDisplayData[] 
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
       <div className="p-2">
-        <table className="min-w-full border-collapse border border-gray-200">
+      <h2>Recent Points Activity</h2>
+        <table>
           <thead>
             {table.getHeaderGroups().map(headerGroup => (
-              <tr key={headerGroup.id} className="bg-gray-100">
+              <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
-                  <th key={header.id} className="border border-gray-200 px-4 py-2 text-left">
+                  <th key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -60,9 +61,9 @@ const PointsActivityTable: React.FC<{ activityData: PointsActivityDisplayData[] 
           </thead>
           <tbody>
             {table.getRowModel().rows.map(row => (
-              <tr key={row.id} className="even:bg-gray-50">
+              <tr key={row.id}>
                 {row.getVisibleCells().map(cell => (
-                  <td key={cell.id} className="border border-gray-200 px-4 py-2">
+                  <td key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}

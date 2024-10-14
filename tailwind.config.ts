@@ -1,5 +1,11 @@
 import type { Config } from "tailwindcss";
 
+// module.exports = {
+// 	corePlugins: {
+// 	  preflight: false,
+// 	}
+//   }
+
 const config: Config = {
     darkMode: ["class"],
     content: [
